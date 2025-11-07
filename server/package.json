@@ -1,0 +1,27 @@
+{
+  "name": "hi-mcp-server",
+  "version": "1.0.0",
+  "description": "MCP Server",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "clean": "rm -rf dist",
+    "start": "node dist/index.js",
+    "start:inspector": "DANGEROUSLY_OMIT_AUTH=true npx @modelcontextprotocol/inspector npm run start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.21.0",
+    "dotenv": "^17.2.3",
+    "pino": "^10.1.0",
+    "typescript": "^5.9.3",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/inspector": "^0.17.2"
+  }
+}

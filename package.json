@@ -1,24 +1,18 @@
 {
   "name": "hi-mcp",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "MCP Server and Client Monorepo",
+  "private": true,
+  "packageManager": "pnpm@10.16.0",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
-    "watch": "tsc --watch",
-    "start": "node dist/index.js",
-    "start:inspector": "DANGEROUSLY_OMIT_AUTH=true npx @modelcontextprotocol/inspector npm run start"
+    "build": "pnpm -r build",
+    "watch": "pnpm -r --parallel watch",
+    "clean": "pnpm -r clean",
+    "start": "pnpm --filter hi-mcp-server start",
+    "start:inspector": "pnpm --filter hi-mcp-server start:inspector",
+    "install:all": "pnpm install && pnpm -r install"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "packageManager": "pnpm@10.16.0",
-  "dependencies": {
-    "@modelcontextprotocol/inspector": "^0.17.2",
-    "@modelcontextprotocol/sdk": "^1.21.0",
-    "dotenv": "^17.2.3",
-    "typescript": "^5.9.3",
-    "zod": "^3.25.76"
-  }
+  "license": "ISC"
 }

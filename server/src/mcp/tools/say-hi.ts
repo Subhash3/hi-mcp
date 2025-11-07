@@ -1,11 +1,19 @@
+import z from "zod";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import {
   HiService,
-  sayHiInputSchema,
-  sayHiOutputSchema,
 } from "../../services/hi-service";
 
+
 const hiService = new HiService();
+
+const sayHiInputSchema = {
+  name: z.string().describe("The name of the person to greet"),
+};
+
+const sayHiOutputSchema = {
+  greeting: z.string().describe("The greeting message"),
+};
 
 export function registerSayHiTool(mcpServer: McpServer) {
   mcpServer.registerTool(
