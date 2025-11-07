@@ -1,18 +1,16 @@
 Just trying to understand mcp stuff!!
 
-## Monorepo Structure
-
-This project is organized as a monorepo with:
-- `server/` - MCP server implementation
-- `client/` - MCP client implementation
-
 ## Setup
 
+Implemented as a monorepo
+
+- `server/` - MCP server
+- `client/` - MCP client
+
+
 ```bash
-pnpm install # Install dependencies for all packages
+pnpm install # Install dependencies
 pnpm run build # Build all packages (generates dist/ folders)
-pnpm run start:inspector # Start mcp inspector
-pnpm run start # Starts the server with the built files
 ```
 
 ### Hooking up to copilot
@@ -38,3 +36,19 @@ pnpm run start # Starts the server with the built files
 }
 ```
 7. Now use `#sayHi` command in copilot chat to verify
+
+### Playaround with inspector
+
+(Even though there is not a lot to play around with lol)
+
+```bash
+pnpm run inspector
+```
+
+### Running the Mcp Client
+
+(An ultra-inferior copilot)
+
+```bash
+pnpm run client
+```

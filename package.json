@@ -9,7 +9,9 @@
     "watch": "pnpm -r --parallel watch",
     "clean": "pnpm -r clean",
     "start": "pnpm --filter hi-mcp-server start",
-    "start:inspector": "pnpm --filter hi-mcp-server start:inspector",
+    "server": "pnpm --filter hi-mcp-server start",
+    "client": "pnpm --filter hi-mcp-client start",
+    "inspector": "pnpm --filter hi-mcp-server start:inspector",
     "install:all": "pnpm install && pnpm -r install"
   },
   "keywords": [],
