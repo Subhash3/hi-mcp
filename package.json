@@ -12,7 +12,9 @@
     "server": "pnpm --filter hi-mcp-server start",
     "client": "pnpm --filter hi-mcp-client start",
     "inspector": "pnpm --filter hi-mcp-server start:inspector",
-    "install:all": "pnpm install && pnpm -r install"
+    "install:all": "pnpm install && pnpm -r install",
+    "check/format": "pnpm -r check/format",
+    "format": "pnpm -r format"
   },
   "keywords": [],
   "author": "",

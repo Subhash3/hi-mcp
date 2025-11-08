@@ -1,6 +1,6 @@
-import "dotenv/config";
-import { MyMcpClient } from "./client";
+import "dotenv/config"
+import { MyMcpClient } from "./client"
 
-const client = new MyMcpClient();
+const client = new MyMcpClient()
 
-client.start();
+client.start()

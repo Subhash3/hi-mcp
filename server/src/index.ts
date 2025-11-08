@@ -1,3 +1,3 @@
-import { startServer } from './mcp/server'
+import { startServer } from "./mcp/server"
 
 startServer()
