@@ -1,5 +1,6 @@
 import { generateText, LanguageModel } from "ai";
 import { createGoogleGenerativeAI } from "@ai-sdk/google";
+import { logger } from "./config/logger";
 
 export class LLM {
   private model: LanguageModel;
@@ -12,7 +13,7 @@ export class LLM {
   }
 
   async query(prompt: string): Promise<string> {
-    console.log("Generating text with Gemini 2.5 Flash model...");
+    logger.info("Generating text with Gemini 2.5 Flash model...");
     const { text } = await generateText({
       model: this.model,
       prompt: prompt,

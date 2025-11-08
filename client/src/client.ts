@@ -4,6 +4,7 @@ import { Transport } from "@modelcontextprotocol/sdk/shared/transport.js";
 import { Tool } from "@modelcontextprotocol/sdk/types.js";
 import inquirer from "inquirer";
 import { LLM } from "./llm";
+import { logger } from "./config/logger";
 
 const choices = ["Query", "List Tools", "Pick a tool", "Exit"] as const;
 type Choice = (typeof choices)[number];
@@ -35,14 +36,14 @@ export class MyMcpClient {
   }
 
   private async setup() {
-    console.log("Connecting to the MCP server...");
+    logger.info("Starting MCP Client...");
     await this.client.connect(this.transport);
-    console.log("Connected.");
+    logger.info("MCP Client connected.");
   }
 
   private async end() {
     await this.client.close();
-    console.log("Bye!");
+    logger.info("Bye!");
   }
 
   private async loop() {
@@ -88,11 +89,12 @@ export class MyMcpClient {
     ]);
 
     const llmResponse = await this.llm.query(response);
-    console.log("LLM Response:", llmResponse);
+
+    logger.info("LLM Response:" + llmResponse);
   }
 
   private async listTools() {
-    console.log("Fetching available tools from the server...");
+    logger.info("Fetching available tools from the server...");
     const toolsResult = await this.client.listTools();
     this.tools = toolsResult.tools;
     this.tools.map((tool) => {
@@ -103,10 +105,7 @@ export class MyMcpClient {
       };
     });
 
-    console.log(
-      "Available tools: ",
-      this.tools.map(({ name }) => name),
-    );
+    logger.info("Available tools: " + this.tools.map(({ name }) => name));
   }
 
   private async pickTool() {
@@ -128,9 +127,9 @@ export class MyMcpClient {
 
     // This can be expanded to do something with the selected tool
     if (!selectedTool) {
-      console.log("Tool not found.");
+      logger.warn("Tool not found.");
       return;
     }
-    console.log(`Using tool: '${selectedTool.name}'`);
+    logger.info(`Using tool: '${selectedTool.name}'`);
   }
 }
