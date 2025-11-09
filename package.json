@@ -11,6 +11,7 @@
     "start": "pnpm --filter hi-mcp-server start",
     "server": "pnpm --filter hi-mcp-server start",
     "client": "pnpm --filter hi-mcp-client start",
+    "agent": "pnpm --filter hi-mcp-agent start",
     "inspector": "pnpm --filter hi-mcp-server start:inspector",
     "install:all": "pnpm install && pnpm -r install",
     "check/format": "pnpm -r check/format",

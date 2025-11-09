@@ -8,6 +8,40 @@ importers:
 
   .: {}
 
+  agent:
+    dependencies:
+      '@ai-sdk/google':
+        specifier: ^2.0.29
+        version: 2.0.29(zod@3.25.76)
+      '@modelcontextprotocol/sdk':
+        specifier: ^1.21.0
+        version: 1.21.0
+      ai:
+        specifier: ^5.0.89
+        version: 5.0.89(zod@3.25.76)
+      dotenv:
+        specifier: ^17.2.3
+        version: 17.2.3
+      hi-mcp-client:
+        specifier: workspace:*
+        version: link:../client
+      inquirer:
+        specifier: ^12.10.0
+        version: 12.10.0(@types/node@24.10.0)
+      pino:
+        specifier: ^10.1.0
+        version: 10.1.0
+      prettier:
+        specifier: 3.6.2
+        version: 3.6.2
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+    devDependencies:
+      '@types/node':
+        specifier: ^24.10.0
+        version: 24.10.0
+
   client:
     dependencies:
       '@ai-sdk/google':
@@ -25,6 +59,9 @@ importers:
       inquirer:
         specifier: ^12.10.0
         version: 12.10.0(@types/node@24.10.0)
+      pino:
+        specifier: ^10.1.0
+        version: 10.1.0
       prettier:
         specifier: 3.6.2
         version: 3.6.2
