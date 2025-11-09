@@ -6,7 +6,7 @@ Structured as a monorepo
 
 - `server/` - MCP server
 - `client/` - MCP client
-- `agents/` - AI Agent
+- `agent/` - AI Agent
 
 
 ```bash
