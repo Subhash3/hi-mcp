@@ -6,6 +6,7 @@ Structured as a monorepo
 
 - `server/` - MCP server
 - `client/` - MCP client
+- `agents/` - AI Agent
 
 
 ```bash
@@ -13,10 +14,21 @@ pnpm install # Install dependencies
 pnpm run build # Build all packages (generates dist/ folders)
 ```
 
-### Hooking up to a client (vscode copilot)
+## Hooking up to a client
 
-1. I'm choosing vscode copilot as the client to hook up to our mcp server
-1. Open a vscode instance (as we usually have the extension installed there)
+### Play around with inspector (MCP server)
+
+(Even though there is not a lot to play around with)
+
+```bash
+pnpm run inspector
+```
+
+### Hookup to VSCode Copilot
+
+> You may choose any other MCP client, but copilot is the only one I have tried.
+
+1. Open a vscode instance 
 2. Click on configure tools icon
 3. Click on 'Add MCP server' icon
 4. Choose 'Command (stdio)' option as that is the transport used by this project
@@ -39,18 +51,14 @@ pnpm run build # Build all packages (generates dist/ folders)
 ```
 7. Now use `#sayHi` command in copilot chat to verify
 
-### Playaround with inspector
+### Custom agent
 
-(Even though there is not a lot to play around with lol)
-
-```bash
-pnpm run inspector
-```
-
-### Running the Mcp Client
-
-(An ultra-inferior copilot)
+> (An ultra-inferior copilot)
 
 ```bash
-pnpm run client
+pnpm run agent
 ```
+
+- connects to the mcp server using the `client` package
+- uses google's `gemini-2.5-flash` model to respond to messages
+
